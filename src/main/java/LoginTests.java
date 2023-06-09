@@ -49,6 +49,30 @@ public class LoginTests {
 
     }
 
+    @Test
+    public void loginNegativeTestWrongEmail(){
+        wd.findElement(By.xpath("//*[.='LOGIN']")).click();
+
+        WebElement emailInput = wd.findElement(By.xpath("//input[1]"));
+        emailInput.click();
+        emailInput.clear();
+        emailInput.sendKeys("marzhcom");
+
+        WebElement passInput = wd.findElement(By.xpath("//input[2]"));
+        passInput.click();
+        passInput.clear();
+        passInput.sendKeys("Qwe1234$");
+
+        wd.findElement(By.xpath("//button[1]")).click();
+
+        //Assert
+
+
+
+
+
+    }
+
 
     @AfterMethod
     public void tearDown(){
