@@ -1,5 +1,6 @@
 package tests;
 
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -21,33 +22,37 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginPositiveTestBase(){
-        String email="marzh@com",password="Qwe1234$";
+        User user = new User().withEmail("marzh@com").withPassword("Qwe1234$");
+ //       String email="marzh@com",password="Qwe1234$";
         app.getUser().openLoginForm();
-        app.getUser().fillLoginForm(email,password);
+        app.getUser().fillLoginForm(user);
         app.getUser().submitLogin();
         app.getUser().pause(3000);
- //       Assert.assertTrue(wd.findElements(By.xpath("//button")).size() > 0);
+
         Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
 
 
     }
        @Test
       public void loginNegativeTestWrongPass(){
-       String email="marzh@com",password="Qwe1234";
+        User user = new User().withEmail("marzh@com").withPassword("Qwe1234");
+
        app.getUser().openLoginForm();
-       app.getUser().fillLoginForm(email,password);
+       app.getUser().fillLoginForm(user);
        app.getUser().submitLogin();
+
 
       }
 
         @Test
     public void loginPositiveTest(){
-        String email="marzh@com",password="Qwe1234$";
+        User user = new User().withEmail("marzh@com").withPassword("Qwe1234$");
+
         // open login form
         app.getUser().openLoginForm();
 
         // fill login form
-       app.getUser().fillLoginForm(email,password);
+       app.getUser().fillLoginForm(user);
 
         // click on button Login
         app.getUser().submitLogin();
@@ -76,12 +81,5 @@ public class LoginTests extends TestBase {
 
         //Assert
  //   }
-
-    @AfterMethod
-    public void tearDown(){
-
-
-    }
-
 
 }

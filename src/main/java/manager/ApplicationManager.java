@@ -18,7 +18,7 @@ public class ApplicationManager {
         return user;
     }
 
-    @BeforeSuite
+
     public void init(){
         wd = new ChromeDriver();
         user = new HelperUser(wd);
@@ -27,7 +27,6 @@ public class ApplicationManager {
     }
 
 
-    @AfterSuite
     public void tearDown(){
         wd.quit();
 
