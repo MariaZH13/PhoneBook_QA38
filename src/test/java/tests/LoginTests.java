@@ -47,9 +47,29 @@ public class LoginTests extends TestBase {
        app.getUser().openLoginForm();
        app.getUser().fillLoginForm(user);
        app.getUser().submitLogin();
+       app.getUser().pause(3000);
+    //   Assert.assertTrue();
+           app.getUser().isAlertPresent();
 
 
       }
+    @Test
+    public void loginNegativeTestWrongEmail(){
+        //.withEmail("marzh@com").withPassword("Qwe1234");
+        User user = User.builder()
+                .email("marzh.com")
+                .password("Qwe1234")
+                .build();
+
+        app.getUser().openLoginForm();
+        app.getUser().fillLoginForm(user);
+        app.getUser().submitLogin();
+//        app.getUser().pause(3000);
+        Assert.assertTrue(app.getUser().isWrongFormatMessage());
+        Assert.assertTrue(app.getUser().isAlertPresent());
+
+
+    }
 
         @Test
     public void loginPositiveTest(){
