@@ -11,8 +11,6 @@ import tests.TestBase;
 
 public class LoginTests extends TestBase {
 
-
-
     @BeforeMethod
     public void precondition(){
         if(app.getUser().isLogged()){
@@ -50,7 +48,6 @@ public class LoginTests extends TestBase {
        app.getUser().pause(3000);
     //   Assert.assertTrue();
            app.getUser().isAlertPresent();
-
 
       }
     @Test

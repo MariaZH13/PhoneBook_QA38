@@ -1,0 +1,14 @@
+12:29:36 INFO  tests.TestBase - Method registrationPositive is started
+12:29:36 INFO  manager.TestNgListener - Test registrationPositive invoked
+12:29:36 INFO  manager.WdListener - Start searching element -----> By.xpath: //*[.='LOGIN']
+12:29:36 INFO  manager.WdListener - Element with locator -----> By.xpath: //*[.='LOGIN'] is found
+12:29:37 INFO  manager.WdListener - Start searching element -----> By.xpath: //input[1]
+12:29:37 INFO  manager.WdListener - Element with locator -----> By.xpath: //input[1] is found
+12:29:38 INFO  manager.WdListener - Start searching element -----> By.xpath: //input[2]
+12:29:38 INFO  manager.WdListener - Element with locator -----> By.xpath: //input[2] is found
+12:29:38 INFO  manager.WdListener - Start searching element -----> By.xpath: //button[2]
+12:29:38 INFO  manager.WdListener - Element with locator -----> By.xpath: //button[2] is found
+12:29:41 INFO  manager.WdListener - Start searching element -----> By.xpath: //button
+12:29:41 INFO  manager.WdListener - Element with locator -----> By.xpath: //button is found
+12:29:41 INFO  manager.TestNgListener - Test registrationPositive successful
+12:29:41 INFO  tests.TestBase - ===================
