@@ -15,7 +15,6 @@ public class HelperUser extends HelperBase{
     }
 
     public void openLoginForm(){
-
         wd.findElement(By.xpath("//*[.='LOGIN']")).click();
     }
 
