@@ -53,7 +53,7 @@ public class AddNewContactTests extends TestBase{
 
        int contactsBeforeRemove = app.getContact().contactList();
 
-        System.out.println(contactsBeforeRemove);
+        logger.info("Contacts list before remove " + contactsBeforeRemove);
 
         app.getContact().choiceContact();
         app.getContact().clickRemoveButton();
@@ -62,13 +62,9 @@ public class AddNewContactTests extends TestBase{
 
         int contactsAfterRemove = app.getContact().contactList();
 
-        System.out.println(contactsAfterRemove);
+        logger.info("Contacts list after remove " + contactsAfterRemove);
 
         Assert.assertTrue(contactsBeforeRemove != contactsAfterRemove);
-
-
-
-
 
         }
 
