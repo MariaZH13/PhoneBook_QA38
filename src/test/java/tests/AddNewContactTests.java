@@ -64,7 +64,7 @@ public class AddNewContactTests extends TestBase{
 
         logger.info("Contacts list after remove " + contactsAfterRemove);
 
-        Assert.assertTrue(contactsBeforeRemove != contactsAfterRemove);
+        Assert.assertTrue(contactsBeforeRemove > contactsAfterRemove);
 
         }
 
