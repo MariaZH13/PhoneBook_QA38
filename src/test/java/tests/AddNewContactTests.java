@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
 public class AddNewContactTests extends TestBase{
 
     Logger logger = LoggerFactory.getLogger(AddNewContactTests.class);
@@ -19,9 +20,7 @@ public class AddNewContactTests extends TestBase{
                         .email("marzh@com")
                         .password("Qwe1234$")
                         .build();
-                app.getUser().openLoginForm();
-                app.getUser().fillLoginForm(user);
-                app.getUser().submitLogin();
+                app.getUser().login(user);
             }
         }
 
@@ -45,10 +44,36 @@ public class AddNewContactTests extends TestBase{
         app.getContact().fillContactForm(contact);
         app.getContact().submitContactForm();
 
-        
+
         Assert.assertTrue(app.getContact().isContactCreated(contact));
+    }
+
+    @Test
+    public void removeContact(){
+
+       int contactsBeforeRemove = app.getContact().contactList();
+
+        System.out.println(contactsBeforeRemove);
+
+        app.getContact().choiceContact();
+        app.getContact().clickRemoveButton();
+
+        app.getContact().pause(3000);
+
+        int contactsAfterRemove = app.getContact().contactList();
+
+        System.out.println(contactsAfterRemove);
+
+        Assert.assertTrue(contactsBeforeRemove != contactsAfterRemove);
+
+
+
+
+
+        }
+
     }
 
 
 
-}
+
