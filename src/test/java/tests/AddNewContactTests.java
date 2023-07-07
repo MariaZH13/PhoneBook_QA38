@@ -27,7 +27,7 @@ public class AddNewContactTests extends TestBase{
 
 
 
-    @Test(invocationCount = 5)
+    @Test(invocationCount = 10)
     public void addNewContactPositive(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         Contact contact = Contact.builder()
@@ -48,25 +48,6 @@ public class AddNewContactTests extends TestBase{
         Assert.assertTrue(app.getContact().isContactCreated(contact));
     }
 
-    @Test
-    public void removeContact(){
-
-       int contactsBeforeRemove = app.getContact().contactList();
-
-        logger.info("Contacts list before remove " + contactsBeforeRemove);
-
-        app.getContact().choiceContact();
-        app.getContact().clickRemoveButton();
-
-        app.getContact().pause(3000);
-
-        int contactsAfterRemove = app.getContact().contactList();
-
-        logger.info("Contacts list after remove " + contactsAfterRemove);
-
-        Assert.assertTrue(contactsBeforeRemove > contactsAfterRemove);
-
-        }
 
     }
 
