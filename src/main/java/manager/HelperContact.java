@@ -52,9 +52,15 @@ public class HelperContact extends HelperBase {
 
     }
 
-    public int removeOneContact(){
+    public int removeOneContact() {
+
         int countBefore = countContacts();
         logger.info("Amount of contacts before is " + countBefore);
+        if (countBefore == 0){
+            logger.info("No contacts");
+        return 0;
+    }
+
 
         click(By.xpath("//div[@class='contact-item_card__2SOIM']"));
         click(By.xpath("//button[.='Remove']"));
@@ -64,7 +70,7 @@ public class HelperContact extends HelperBase {
         int countAfter = countContacts();
         logger.info("Amount of contacts after is " + countAfter);
 
-        return countAfter - countBefore;
+        return countBefore - countAfter;
 
     }
 

@@ -6,12 +6,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class RemoveContactTest  extends TestBase{
+public class RemoveContactTest  extends TestBase {
 
 
     @BeforeMethod
-    public void precondition(){
-        if(!app.getUser().isLogged()){
+    public void precondition() {
+        if (!app.getUser().isLogged()) {
             User user = User.builder()
                     .email("marzh@com")
                     .password("Qwe1234$")
@@ -41,24 +41,24 @@ public class RemoveContactTest  extends TestBase{
 //        }
 
     @Test
-    public void removeAOneContactPositive(){
+    public void removeOneContactPositive() {
         int res = app.getContact().removeOneContact();
-        Assert.assertEquals(-1,res);
+        if(res == 0) {
+            Assert.assertTrue(app.getContact().isNoContacts());
+            return;
+        }
+        Assert.assertEquals(1, res);
+    }
+        @Test
+        public void removeContactsPositive () {
+            app.getContact().removeAllContacts();
+            Assert.assertTrue(app.getContact().isNoContacts());
+        }
+
+        @AfterMethod
+        public void postCondition () {
+            app.getUser().logOut();
+        }
+
 
     }
-
-    @Test
-    public void removeAllContactsPositive(){
-        app.getContact().removeAllContacts();
-        Assert.assertTrue(app.getContact().isNoContacts());
-    }
-
-    @AfterMethod
-    public void postCondition(){
-        app.getUser().logOut();
-    }
-
-
-
-
-}
