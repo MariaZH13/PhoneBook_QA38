@@ -91,6 +91,8 @@ public class LoginTests extends TestBase {
 
     }
 
+
+
  //   @Test
  //   public void loginNegativeTestWrongEmail(){
   //      wd.findElement(By.xpath("//*[.='LOGIN']")).click();
@@ -108,5 +110,7 @@ public class LoginTests extends TestBase {
 
         //Assert
  //   }
+
+
 
 }
