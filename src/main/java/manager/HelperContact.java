@@ -90,6 +90,13 @@ public class HelperContact extends HelperBase {
                 .size() == 0;
     }
 
+    public void addContact(Contact contact){
+        openContactForm();
+        fillContactForm(contact);
+        submitContactForm();
+
+    }
+
 
 
 }

@@ -14,7 +14,7 @@ public class AddNewContactTests extends TestBase{
 
     Logger logger = LoggerFactory.getLogger(AddNewContactTests.class);
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition(){
             if(!app.getUser().isLogged()){
                 User user = User.builder()
@@ -28,7 +28,7 @@ public class AddNewContactTests extends TestBase{
 
 
 
-    @Test(invocationCount = 3)
+    @Test(invocationCount = 3,groups = {"positive"})
     public void addNewContactPositive(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         Contact contact = Contact.builder()

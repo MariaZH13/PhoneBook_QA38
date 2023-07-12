@@ -29,13 +29,19 @@ test {
 
 task mytest(type: Test){
     useTestNG(){
+        def groups = System.getProperty('groups')
+        if(groups != null){
+            includeGroups groups
+        }
+
         def suite = System.getProperty('suite','')
         if(suite.equals('registration')){
             suites 'src/test/resources/registration.xml'
-        }else if(suite.equals('add')){
+        } else if(suite.equals('add')){
             suites 'src/test/resources/add.xml'
-        }
-        else{
+        } else if(suite.equals('negative')){
+         suites 'src/test/resources/negative.xml'
+       } else{
             suites 'src/test/resources/testng.xml'
         }
 

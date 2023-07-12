@@ -15,7 +15,7 @@ import tests.TestBase;
 public class RegistrationTests extends TestBase {
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition(){
         if(app.getUser().isLogged()){
             app.getUser().logOut();
@@ -23,7 +23,7 @@ public class RegistrationTests extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = {"smoke","positive","regress"})
     public void registrationPositive(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         User user = User.builder()
@@ -39,7 +39,7 @@ public class RegistrationTests extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = {"regress","negative"})
     public void registrationNegativeWrongEmail(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         User user =  User.builder()

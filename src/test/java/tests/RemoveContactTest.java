@@ -1,5 +1,6 @@
 package tests;
 
+import models.Contact;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -9,7 +10,7 @@ import org.testng.annotations.Test;
 public class RemoveContactTest  extends TestBase {
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition() {
         if (!app.getUser().isLogged()) {
             User user = User.builder()
@@ -42,6 +43,16 @@ public class RemoveContactTest  extends TestBase {
 
     @Test
     public void removeOneContactPositive() {
+        int i = (int)(System.currentTimeMillis()/1000)%3600;
+        Contact contact = Contact.builder()
+                .name("Sara" + i)
+                .lastName("Green" + i)
+                .phone("12333" + i + "034")
+                .email("sara_" + i + "@mail.com")
+                .address("Rehovot")
+                .description("friend from job")
+                .build();
+        app.getContact().addContact(contact);
         int res = app.getContact().removeOneContact();
         if(res == 0) {
             Assert.assertTrue(app.getContact().isNoContacts());
@@ -55,7 +66,7 @@ public class RemoveContactTest  extends TestBase {
             Assert.assertTrue(app.getContact().isNoContacts());
         }
 
-        @AfterMethod
+        @AfterMethod(alwaysRun = true)
         public void postCondition () {
             app.getUser().logOut();
         }

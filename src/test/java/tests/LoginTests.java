@@ -11,14 +11,14 @@ import tests.TestBase;
 
 public class LoginTests extends TestBase {
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition(){
         if(app.getUser().isLogged()){
             app.getUser().logOut();
         }
     }
 
-    @Test
+    @Test(groups = {"smoke","positive"})
     public void loginPositiveTestBase(){
         User user = User.builder()
                 .email("marzh@com")
@@ -50,7 +50,7 @@ public class LoginTests extends TestBase {
            app.getUser().isAlertPresent();
 
       }
-    @Test
+    @Test(groups = {"regress","negative"})
     public void loginNegativeTestWrongEmail(){
         //.withEmail("marzh@com").withPassword("Qwe1234");
         User user = User.builder()
