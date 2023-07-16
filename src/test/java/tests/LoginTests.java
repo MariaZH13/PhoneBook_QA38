@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -18,12 +19,12 @@ public class LoginTests extends TestBase {
         }
     }
 
-    @Test(groups = {"smoke","positive"})
-    public void loginPositiveTestBase(){
-        User user = User.builder()
-                .email("marzh@com")
-                .password("Qwe1234$")
-                .build();
+    @Test(groups = {"smoke","positive"}, dataProvider = "userDTO",dataProviderClass = ProviderData.class)
+    public void loginPositiveTestBase(User user){
+//        User user = User.builder()
+//                .email("marzh@com")
+//                .password("Qwe1234$")
+//                .build();
  //       String email="marzh@com",password="Qwe1234$";
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user);
@@ -68,12 +69,12 @@ public class LoginTests extends TestBase {
 
     }
 
-        @Test
-    public void loginPositiveTest(){
-        User user = User.builder()
-                .email("marzh@com")
-                .password("Qwe1234$")
-                .build();
+        @Test(dataProvider = "userDTOcsv",dataProviderClass = ProviderData.class)
+    public void loginPositiveTest(User user){
+//        User user = User.builder()
+//                .email("marzh@com")
+//                .password("Qwe1234$")
+//                .build();
 
         // open login form
         app.getUser().openLoginForm();

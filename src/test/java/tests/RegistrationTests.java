@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import manager.TestNgListener;
 import models.User;
 import org.openqa.selenium.By;

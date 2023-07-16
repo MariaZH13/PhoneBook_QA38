@@ -49,7 +49,7 @@ public class ApplicationManager {
         contact = new HelperContact(wd);
 
         wd.navigate().to("https://telranedu.web.app/home");
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
 

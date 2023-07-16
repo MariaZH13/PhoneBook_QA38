@@ -4,6 +4,7 @@
     <test name="AddTests">
         <classes>
             <class name="tests.AddNewContactTests"/>
+
         </classes>
     </test>
 </suite>
