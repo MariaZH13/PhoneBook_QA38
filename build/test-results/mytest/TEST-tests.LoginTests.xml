@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.LoginTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-07-24T15:14:31" hostname="MacBook-Air-Maria.local" time="67.35">
+  <properties/>
+  <testcase name="loginNegativeTestWrongEmail" classname="tests.LoginTests" time="2.064"/>
+  <testcase name="loginNegativeTestWrongPass" classname="tests.LoginTests" time="3.971"/>
+  <testcase name="loginPositiveTest[0](User(email=kattyp11@mail.com, password=Perry1234$))" classname="tests.LoginTests" time="3.936"/>
+  <testcase name="loginPositiveTest[1](User(email=david@mail.com, password=Perry1235$))" classname="tests.LoginTests" time="3.923"/>
+  <testcase name="loginPositiveTest[2](User(email=marymay@mail.com, password=Perry1236$))" classname="tests.LoginTests" time="3.918"/>
+  <testcase name="loginPositiveTest[3](User(email=kamila0@mail.com, password=Perry1237$))" classname="tests.LoginTests" time="3.921"/>
+  <testcase name="loginPositiveTest[4](User(email=markise@mail.com, password=Perry1238$))" classname="tests.LoginTests" time="3.924"/>
+  <testcase name="loginPositiveTest[5](User(email=arturo@mail.com, password=Perry1239$))" classname="tests.LoginTests" time="3.916"/>
+  <testcase name="loginPositiveTestBase[0](User(email=marge@mail.com, password=Simpson1234$))" classname="tests.LoginTests" time="3.919"/>
+  <testcase name="loginPositiveTestBase[1](User(email=homer@mail.com, password=Simpson125$))" classname="tests.LoginTests" time="3.929"/>
+  <testcase name="loginPositiveTestBase[2](User(email=liza@mail.com, password=Simpson14$))" classname="tests.LoginTests" time="3.922"/>
+  <testcase name="loginPositiveTestBase[3](User(email=bart@mail.com, password=Simpson11$))" classname="tests.LoginTests" time="3.937"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://telranedu.web.app."
+]]></system-err>
+</testsuite>
